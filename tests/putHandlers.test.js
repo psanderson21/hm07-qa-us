@@ -29,6 +29,7 @@ test('Should return 200 status code....', async () => {
 	}  catch(error) {
 		console.error(error);
 	}
+	expect(postResponseBody.name).toBe("Test Kit");
 	
 	let actualStatusCode;
 	try {

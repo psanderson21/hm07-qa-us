@@ -2,12 +2,7 @@
 const config = require('../config');
 const requestBodyCreateTestKit = {
 	"name": "Test Kit",
-	"productsList":[
-		{
-			"id": 2,
-			"quantity": 1
-		}
-	]
+	"cardId": 1
 }
 
 test('Status code should be 200', async () => {
@@ -24,6 +19,7 @@ test('Status code should be 200', async () => {
 	}  catch(error) {
 		console.error(error);
 	}
+	expect(postResponseBody.name).toBe("Test Kit");
 
 	let actualStatusCode;
     try {
